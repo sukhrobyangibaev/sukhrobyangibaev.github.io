@@ -2,7 +2,7 @@
 layout: post
 title:  "Practical class 1"
 date:   2025-02-05 08:30:00 +0500
-categories: databases
+categories: class_materials
 ---
 {%- assign image_base = "/assets/images" -%}
 {%- assign image_path = page.path | split: "/" | last | split: "." | first -%}
