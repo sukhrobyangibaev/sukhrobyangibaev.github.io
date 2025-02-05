@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Databases | Practical class 1"
-description: PostgreSQL Introduction (test seo)
+description: PostgreSQL Introduction
 date: 2025-02-05 08:30:00 +0500
 categories: [class_materials,databases_en]
 ---
