@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Databases | Practical class 1"
-date:   2025-02-05 08:30:00 +0500
+title: "Databases | Practical class 1"
+description: PostgreSQL Introduction (test seo)
+date: 2025-02-05 08:30:00 +0500
 categories: [class_materials,databases_en]
 ---
 <!-- /assets/images/2025-02-05-postgres-install -->
