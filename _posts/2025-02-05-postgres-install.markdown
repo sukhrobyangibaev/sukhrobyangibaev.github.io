@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Databases EN | Practical class 1"
+title:  "Databases | Practical class 1"
 date:   2025-02-05 08:30:00 +0500
 categories: [class_materials,databases_en]
 ---
