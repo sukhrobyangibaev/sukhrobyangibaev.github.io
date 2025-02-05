@@ -4,9 +4,7 @@ title:  "Databases | Practical class 1"
 date:   2025-02-05 08:30:00 +0500
 categories: [class_materials,databases_en]
 ---
-{%- assign image_base = "/assets/images" -%}
-{%- assign image_path = page.path | split: "/" | last | split: "." | first -%}
-{%- assign full_image_path = image_base | append: "/" | append: image_path -%}
+<!-- assets/images/2025-02-05-postgres-install -->
 
 # PostgreSQL Introduction
 
@@ -14,13 +12,13 @@ categories: [class_materials,databases_en]
 
 To install PostgreSQL locally on your computer, visit the [installer by EDB](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), and download the newest version compatible with your operating system.
 
-![]({{ full_image_path }}/Screenshot%202025-02-05%20095648%201.png)
+![](assets/images/2025-02-05-postgres-install/Screenshot%202025-02-05%20095648%201.png)
 
 ## Start the Install
 
 When the downloading is complete, double click the downloaded file and start the installation:
 
-![]({{ full_image_path }}/Screenshot%202025-02-05%20095922.png)
+![](assets/images/2025-02-05-postgres-install/Screenshot%202025-02-05%20095922.png)
 
 ![](https://www.w3schools.com/postgresql/screenshot_postgresql_install2.png)
 
@@ -28,7 +26,7 @@ When the downloading is complete, double click the downloaded file and start the
 
 You can specify the location of PostgreSQL, I will go with the default choice:
 
-![]({{ full_image_path }}/Screenshot%202025-02-05%20100145.png)
+![](assets/images/2025-02-05-postgres-install/Screenshot%202025-02-05%20100145.png)
 
 ## Select Components
 
@@ -40,7 +38,7 @@ To use PostgreSQL, you will need to install the PostgreSQL Server. In this tutor
 
 You can also choose where to store the database data, I will go with the default choice:
 
-![]({{ full_image_path }}/Screenshot%202025-02-05%20100308.png)
+![](assets/images/2025-02-05-postgres-install/Screenshot%202025-02-05%20100308.png)
 
 ## Select Password
 
@@ -95,7 +93,7 @@ SQL Shell (psql) is a terminal based program where you can write and execute SQL
 
 You will find the SQL Shell (psql) tool in the start menu under PostgreSQL:
 
-![]({{ full_image_path }}/Screenshot%202025-02-05%20100931%201.png)
+![](assets/images/2025-02-05-postgres-install/Screenshot%202025-02-05%20100931%201.png)
 
 Once the program is open, you should see a window like the one below.
 
@@ -133,7 +131,7 @@ Enter the password you chose when you installed the PostgreSQL database, my pass
 
 The result might look like an error, but if it shows `psql (17.2)` or any other version, and in the end you see the `postgres=#` command (and maybe a warning in between), then you have successfully connected to the database!
 
-![]({{ full_image_path }}/Pasted%20image%2020250205133203.png)
+![](assets/images/2025-02-05-postgres-install/Pasted%20image%2020250205133203.png)
 
 ## Execute SQL Statements
 
@@ -151,7 +149,7 @@ To insert SQL statements in the SQL Shell command, just write them after the `p
 
 Press Enter and the result should look like this:
 
-![]({{ full_image_path }}/Pasted%20image%2020250205133248.png)
+![](assets/images/2025-02-05-postgres-install/Pasted%20image%2020250205133248.png)
 
 ## Remember the Semicolon
 
@@ -165,7 +163,7 @@ Press Enter and the result should look like this:
 
 You will find the pgAdmin4 application in the start menu under PostgreSQL:
 
-![]({{ full_image_path }}/Pasted%20image%2020250205133521.png)
+![](assets/images/2025-02-05-postgres-install/Pasted%20image%2020250205133521.png)
 
 ## pgAdmin4
 
