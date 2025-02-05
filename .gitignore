@@ -5,3 +5,6 @@ _site
 vendor
 
 Gemfile.lock
+
+# for local run
+# bundle exec jekyll serve
