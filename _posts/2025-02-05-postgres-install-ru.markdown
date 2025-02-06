@@ -3,7 +3,7 @@ layout: post
 title: "Базы данных | Практическое занятие 1"
 description: Введение в PostgreSQL
 date: 2025-02-05 08:30:00 +0500
-categories: [class_materials,databases_ru]
+categories: [class_materials,databases_ru,practice]
 ---
 
 # Введение в PostgreSQL
