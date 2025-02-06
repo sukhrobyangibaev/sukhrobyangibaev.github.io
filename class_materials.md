@@ -3,6 +3,11 @@ layout: page
 title: Class Materials
 permalink: /class_materials/
 ---
+<style>
+.post-item h2 {
+  font-size: 1.2em;
+}
+</style>
 
 <div style="margin-bottom: 20px;">
   <select id="languageFilter" onchange="filterPosts()">
