@@ -20,7 +20,7 @@ permalink: /class_materials/
 </div>
 
 <div id="posts-container">
-  {% for post in site.categories.class_materials %}
+  {% for post in site.categories.class_materials reversed %}
     <article class="post-item" 
       data-language="{% if post.categories contains 'databases_en' %}databases_en{% elsif post.categories contains 'databases_ru' %}databases_ru{% endif %}"
       data-type="{% if post.categories contains 'lecture' %}lecture{% elsif post.categories contains 'practice' %}practice{% elsif post.categories contains 'assignment' %}assignment{% endif %}">
