@@ -40,7 +40,7 @@ permalink: /:categories/:title/
 # Navigation
 header_pages:
   - class_materials.md
-  - about.markdown
+  - about.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.
