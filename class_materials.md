@@ -4,50 +4,148 @@ title: Class Materials
 permalink: /class_materials/
 ---
 <style>
-.post-item h2 {
+.category-section {
+  margin-bottom: 20px;
+}
+
+.category-header {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.category-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.subcategory {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.subcategory-header {
   font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.post-item {
+  margin-left: 40px;
+  margin-bottom: 8px;
+}
+
+.post-item a {
+  text-decoration: none;
+  color: #0366d6;
+}
+
+.post-item a:hover {
+  text-decoration: underline;
+}
+
+.collapsed {
+  display: none;
 }
 </style>
 
-<div style="margin-bottom: 20px;">
-  <select id="languageFilter" onchange="filterPosts()">
-    <option value="all">All Languages</option>
-    <option value="databases_en">English</option>
-    <option value="databases_ru">Russian</option>
-  </select>
+<div id="materials-container">
+  <!-- English Section -->
+  <div class="category-section">
+    <div class="category-header" onclick="toggleSection('en-content')">
+      <h2>Databases EN</h2>
+    </div>
+    <div id="en-content">
+      <div class="subcategory">
+        <div class="subcategory-header">Lectures</div>
+        {% for post in site.categories.class_materials reversed %}
+          {% if post.categories contains 'databases_en' and post.categories contains 'lecture' %}
+            <div class="post-item">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      <div class="subcategory">
+        <div class="subcategory-header">Practice</div>
+        {% for post in site.categories.class_materials reversed %}
+          {% if post.categories contains 'databases_en' and post.categories contains 'practice' %}
+            <div class="post-item">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      <div class="subcategory">
+        <div class="subcategory-header">Assignments</div>
+        {% for post in site.categories.class_materials reversed %}
+          {% if post.categories contains 'databases_en' and post.categories contains 'assignment' %}
+            <div class="post-item">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
-  <select id="typeFilter" onchange="filterPosts()">
-    <option value="all">All Types</option>
-    <option value="lecture">Lecture</option>
-    <option value="practice">Practice</option>
-    <option value="assignment">Assignment</option>
-  </select>
-</div>
-
-<div id="posts-container">
-  {% for post in site.categories.class_materials reversed %}
-    <article class="post-item" 
-      data-language="{% if post.categories contains 'databases_en' %}databases_en{% elsif post.categories contains 'databases_ru' %}databases_ru{% endif %}"
-      data-type="{% if post.categories contains 'lecture' %}lecture{% elsif post.categories contains 'practice' %}practice{% elsif post.categories contains 'assignment' %}assignment{% endif %}">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    </article>
-  {% endfor %}
+  <!-- Russian Section -->
+  <div class="category-section">
+    <div class="category-header" onclick="toggleSection('ru-content')">
+      <h2>Databases RU</h2>
+    </div>
+    <div id="ru-content">
+      <div class="subcategory">
+        <div class="subcategory-header">Lectures</div>
+        {% for post in site.categories.class_materials reversed %}
+          {% if post.categories contains 'databases_ru' and post.categories contains 'lecture' %}
+            <div class="post-item">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      <div class="subcategory">
+        <div class="subcategory-header">Practice</div>
+        {% for post in site.categories.class_materials reversed %}
+          {% if post.categories contains 'databases_ru' and post.categories contains 'practice' %}
+            <div class="post-item">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      <div class="subcategory">
+        <div class="subcategory-header">Assignments</div>
+        {% for post in site.categories.class_materials reversed %}
+          {% if post.categories contains 'databases_ru' and post.categories contains 'assignment' %}
+            <div class="post-item">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
-function filterPosts() {
-  const languageFilter = document.getElementById('languageFilter').value;
-  const typeFilter = document.getElementById('typeFilter').value;
-  const posts = document.getElementsByClassName('post-item');
-
-  for (let post of posts) {
-    const language = post.getAttribute('data-language');
-    const type = post.getAttribute('data-type');
-    
-    const languageMatch = languageFilter === 'all' || language === languageFilter;
-    const typeMatch = typeFilter === 'all' || type === typeFilter;
-    
-    post.style.display = languageMatch && typeMatch ? 'block' : 'none';
-  }
+function toggleSection(sectionId) {
+  const content = document.getElementById(sectionId);
+  content.classList.toggle('collapsed');
 }
+
+// Initialize all sections as expanded
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = ['en-content', 'ru-content'];
+  sections.forEach(section => {
+    document.getElementById(section).classList.remove('collapsed');
+  });
+});
 </script>
