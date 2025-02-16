@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm Sukhrob. 
+Hi, I'm Sukhrob! 👋
