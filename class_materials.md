@@ -141,11 +141,11 @@ function toggleSection(sectionId) {
   content.classList.toggle('collapsed');
 }
 
-// Initialize all sections as expanded
+// Initialize all sections as collapsed
 document.addEventListener('DOMContentLoaded', function() {
   const sections = ['en-content', 'ru-content'];
   sections.forEach(section => {
-    document.getElementById(section).classList.remove('collapsed');
+    document.getElementById(section).classList.add('collapsed');
   });
 });
 </script>
