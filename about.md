@@ -8,6 +8,7 @@ Hi, I'm Sukhrob! 👋
 
 <div id="chat-container">
   <div id="chat-messages"></div>
+  <button id="clear-button">Clear chat</button>
   <input type="text" id="user-input" placeholder="Type your message...">
   <button id="send-button">Send</button>
 </div>
@@ -16,8 +17,9 @@ Hi, I'm Sukhrob! 👋
   const chatMessages = document.getElementById('chat-messages');
   const userInput = document.getElementById('user-input');
   const sendButton = document.getElementById('send-button');
+  const clearButton = document.getElementById('clear-button');
 
-  let messages = [{role: "system", content: "You are a helpful assistant."}];
+  let messages = [];
 
   function addMessage(role, content) {
     const messageElement = document.createElement('div');
@@ -52,6 +54,13 @@ Hi, I'm Sukhrob! 👋
   userInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       sendMessage();
+    }
+  });
+
+  clearButton.addEventListener('click', () => {
+    messages = [];
+    while (chatMessages.firstChild) {
+      chatMessages.removeChild(chatMessages.firstChild);
     }
   });
 </script>
