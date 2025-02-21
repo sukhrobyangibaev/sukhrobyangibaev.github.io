@@ -8,9 +8,11 @@ Hi, I'm Sukhrob! 👋
 
 <div id="chat-container">
   <div id="chat-messages"></div>
-  <button id="clear-button">Clear chat</button>
-  <input type="text" id="user-input" placeholder="Type your message...">
-  <button id="send-button">Send</button>
+  <div id="input-container">
+    <button id="clear-button">Clear chat</button>
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button id="send-button">Send</button>
+  </div>
 </div>
 
 <script>
@@ -71,11 +73,23 @@ Hi, I'm Sukhrob! 👋
     padding: 10px;
     width: 90%;
     margin: 20px auto;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
   }
 
   #chat-messages {
     min-height: 100px;
     margin-bottom: 10px;
+  }
+
+  #input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #user-input {
+    flex: 1; 
   }
 
   .user {
