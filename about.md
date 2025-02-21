@@ -69,7 +69,7 @@ Hi, I'm Sukhrob! 👋
   #chat-container {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 500px;
+    width: 90%;
     margin: 20px auto;
   }
 
