@@ -73,8 +73,8 @@ Hi, I'm Sukhrob! 👋
     padding: 10px;
     width: 90%;
     margin: 20px auto;
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack children vertically */
+    display: flex;
+    flex-direction: column;
   }
 
   #chat-messages {
@@ -90,6 +90,10 @@ Hi, I'm Sukhrob! 👋
 
   #user-input {
     flex: 1; 
+  }
+
+  #clear-button {
+    white-space: nowrap;
   }
 
   .user {
