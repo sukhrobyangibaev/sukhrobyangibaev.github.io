@@ -21,8 +21,8 @@
     let isRateLimited = false;
     const COOLDOWN_TIME = 5000;
 
-    const ERR_LIMIT_MSG = "{% if include.lang == 'RU' %}Вы достигли максимально допустимого количества сообщений за эту сессию.{% else %}You've reached the maximum allowed messages in this session.{% endif %}";
-    const ERR_RATE_MSG = "{% if include.lang == 'RU' %}Пожалуйста, подождите немного между сообщениями.{% else %}Please wait a moment between messages.{% endif %}";
+    const ERR_LIMIT_MSG = "{% if include.lang == 'RU' %}Вы достигли максимально допустимого количества сообщений за эту сессию. Пожалуйста, очистите чат.{% else %}You've reached the maximum allowed messages in this session. Please clear chat.{% endif %}";
+    const ERR_RATE_MSG = "{% if include.lang == 'RU' %}Пожалуйста, подождите немного между сообщениями. (5 сек.){% else %}Please wait a moment between messages. (5 sec){% endif %}";
   
     let messages = [];
   
