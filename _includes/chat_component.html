@@ -87,6 +87,15 @@
       userInput.value = '';
   
       messages.push({role: "user", content: userMessage});
+
+      const loadingMessage = document.createElement('div');
+      loadingMessage.classList.add('assistant');
+      chatMessages.appendChild(loadingMessage);
+      let dotCount = 0;
+      const typingInterval = setInterval(() => {
+        dotCount = (dotCount + 1) % 4;
+        loadingMessage.innerHTML = marked.parse("." + ".".repeat(dotCount));
+      }, 500);
   
       try {
         const response = await fetch('{{ include.url }}', {
@@ -99,6 +108,8 @@
   
         if (!response.ok) {
           const errorText = await response.text();
+          clearInterval(typingInterval);
+          loadingMessage.remove();
           addMessage('error', "{% if include.lang == 'RU' %}Ошибка: " + errorText + "{% else %}Error: " + errorText + "{% endif %}");
           isRateLimited = false;
           return;
@@ -108,8 +119,11 @@
         const assistantMessage = data.completion;
   
         messages.push({role: "assistant", content: assistantMessage});
-        addMessage('assistant', assistantMessage);
+        clearInterval(typingInterval);
+        loadingMessage.innerHTML = marked.parse(assistantMessage);
       } catch (error) {
+        clearInterval(typingInterval);
+        loadingMessage.remove();
         addMessage('error', "{% if include.lang == 'RU' %}Ошибка: " + error.message + "{% else %}Error: " + error.message + "{% endif %}");
         console.error('Fetch error:', error);
         isRateLimited = false;
