@@ -1,10 +1,10 @@
 <div id="chat-container">
     <div id="chat-messages"></div>
     <div id="input-container">
-      <textarea id="user-input" placeholder="Ask AI..."></textarea>
+      <textarea id="user-input" placeholder="{% if include.lang == 'RU' %}Спросить ИИ...{% else %}Ask AI...{% endif %}"></textarea>
       <div id="button-row">
-        <button id="clear-button">Clear chat</button>
-        <button id="send-button">Send</button>
+        <button id="clear-button">{% if include.lang == 'RU' %}Очистить чат{% else %}Clear chat{% endif %}</button>
+        <button id="send-button">{% if include.lang == 'RU' %}Отправить{% else %}Send{% endif %}</button>
       </div>
     </div>
 </div>
