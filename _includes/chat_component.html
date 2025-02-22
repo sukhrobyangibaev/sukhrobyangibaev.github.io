@@ -15,6 +15,14 @@
     const userInput = document.getElementById('user-input');
     const sendButton = document.getElementById('send-button');
     const clearButton = document.getElementById('clear-button');
+
+    const MESSAGE_LIMIT = 5;
+    let userMessageCount = 0;
+    let isRateLimited = false;
+    const COOLDOWN_TIME = 5000;
+
+    const ERR_LIMIT_MSG = "{% if include.lang == 'RU' %}Вы достигли максимально допустимого количества сообщений за эту сессию.{% else %}You've reached the maximum allowed messages in this session.{% endif %}";
+    const ERR_RATE_MSG = "{% if include.lang == 'RU' %}Пожалуйста, подождите немного между сообщениями.{% else %}Please wait a moment between messages.{% endif %}";
   
     let messages = [];
   
@@ -26,6 +34,20 @@
     }
   
     async function sendMessage() {
+
+      if (userMessageCount >= MESSAGE_LIMIT) {
+        addMessage('error', ERR_LIMIT_MSG);
+        return;
+      }
+
+      if (isRateLimited) {
+        addMessage('error', ERR_RATE_MSG);
+        return;
+      }
+
+      isRateLimited = true;
+      userMessageCount++;
+
       const userMessage = userInput.value;
       addMessage('user', userMessage);
       userInput.value = '';
@@ -45,6 +67,10 @@
   
       messages.push({role: "assistant", content: assistantMessage});
       addMessage('assistant', assistantMessage);
+
+      setTimeout(() => {
+        isRateLimited = false;
+      }, COOLDOWN_TIME);
     }
   
     sendButton.addEventListener('click', sendMessage);
@@ -110,5 +136,11 @@
     .assistant {
       text-align: left;
       color: green;
+    }
+
+    .error {
+      text-align: center;
+      color: red;
+      font-weight: bold;
     }
   </style>
