@@ -79,19 +79,33 @@
   
       messages.push({role: "user", content: userMessage});
   
-      const response = await fetch('{{ include.url }}', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ messages: messages })
-      });
+      try {
+        const response = await fetch('{{ include.url }}', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ messages: messages })
+        });
   
-      const data = await response.json();
-      const assistantMessage = data.completion;
+        if (!response.ok) {
+          const errorText = await response.text();
+          addMessage('error', "{% if include.lang == 'RU' %}Ошибка: " + errorText + "{% else %}Error: " + errorText + "{% endif %}");
+          isRateLimited = false;
+          return;
+        }
   
-      messages.push({role: "assistant", content: assistantMessage});
-      addMessage('assistant', assistantMessage);
+        const data = await response.json();
+        const assistantMessage = data.completion;
+  
+        messages.push({role: "assistant", content: assistantMessage});
+        addMessage('assistant', assistantMessage);
+      } catch (error) {
+        addMessage('error', "{% if include.lang == 'RU' %}Ошибка: " + error.message + "{% else %}Error: " + error.message + "{% endif %}");
+        console.error('Fetch error:', error);
+        isRateLimited = false;
+        return;
+      }
 
       setTimeout(() => {
         isRateLimited = false;
