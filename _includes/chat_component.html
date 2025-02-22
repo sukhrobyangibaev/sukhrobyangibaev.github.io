@@ -27,6 +27,9 @@
     const DAILY_MESSAGE_LIMIT = 30;
     const ERR_DAILY_MSG = "{% if include.lang == 'RU' %}Вы достигли дневного лимита сообщений. Пожалуйста, попробуйте завтра.{% else %}You've reached your daily message limit. Please try again tomorrow.{% endif %}";
 
+    const MESSAGE_CHAR_LIMIT = 2000;
+    const ERR_LENGTH_MSG = "{% if include.lang == 'RU' %}Слишком длинное сообщение{% else %}Message too long{% endif %}";
+
     let dailyData = localStorage.getItem('dailyMessageCount');
     if (dailyData) {
       dailyData = JSON.parse(dailyData);
@@ -67,13 +70,19 @@
         return;
       }
 
+      const userMessage = userInput.value;
+      
+      if (userMessage.length > MESSAGE_CHAR_LIMIT) {
+        addMessage('error', ERR_LENGTH_MSG);
+        return;
+      }
+
       isRateLimited = true;
       userMessageCount++;
 
       dailyData.count++;
       localStorage.setItem('dailyMessageCount', JSON.stringify(dailyData));
 
-      const userMessage = userInput.value;
       addMessage('user', userMessage);
       userInput.value = '';
   
