@@ -135,6 +135,8 @@ permalink: /class_materials/
   </div>
 </div>
 
+{% include chat_component.html url="https://astounding-treacle-ae7505.netlify.app/.netlify/functions/lb_ai_girlfriend" %}
+
 <script>
 function toggleSection(sectionId) {
   const content = document.getElementById(sectionId);
