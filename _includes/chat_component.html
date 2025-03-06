@@ -49,7 +49,8 @@
     function addMessage(role, content) {
       const messageElement = document.createElement('div');
       messageElement.classList.add(role);
-      messageElement.innerHTML = marked.parse(content);
+      const formattedContent = content.replace(/\n/g, '  \n');
+      messageElement.innerHTML = marked.parse(formattedContent);
       chatMessages.appendChild(messageElement);
     }
   
