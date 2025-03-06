@@ -145,6 +145,7 @@
   
     clearButton.addEventListener('click', () => {
       messages = [];
+      userMessageCount = 0;
       while (chatMessages.firstChild) {
         chatMessages.removeChild(chatMessages.firstChild);
       }
