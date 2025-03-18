@@ -1,0 +1,31 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Tweet styling */
+.tweets-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tweet-item, .tweet {
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.tweet-date {
+  color: #666;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+
+.tweet-content {
+  margin-bottom: 15px;
+}
+
+.tweet-media img,
+.tweet-media video {
+  max-width: 100%;
+  border-radius: 10px;
+}

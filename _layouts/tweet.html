@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="tweet">
+  <div class="tweet-date">{{ page.date | date: "%b %-d, %Y" }}</div>
+  <div class="tweet-content">{{ content }}</div>
+  {% if page.image %}
+    <div class="tweet-media">
+      <img src="{{ page.image }}" alt="{{ page.image_alt }}">
+    </div>
+  {% endif %}
+  {% if page.video %}
+    <div class="tweet-media">
+      <video controls src="{{ page.video }}"></video>
+    </div>
+  {% endif %}
+</div>
