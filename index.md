@@ -2,9 +2,7 @@
 layout: default
 ---
 
-<div class="tweets-container">
-  <h1>Recent Thoughts</h1>
-  
+<div class="tweets-container">  
   {% for tweet in site.tweets reversed limit:10 %}
   <div class="tweet-item">
     <div class="tweet-date">{{ tweet.date | date: "%b %-d, %Y" }}</div>
