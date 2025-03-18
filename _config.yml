@@ -62,3 +62,8 @@ header_pages:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+collections:
+  tweets:
+    output: true
+    permalink: /tweets/:slug/
