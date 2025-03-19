@@ -4,7 +4,11 @@ title: "Project | Thesis Generator"
 description: Automatically analyze source code files and generate a structured thesis document.
 date: 2025-01-24 00:30:00 +0500
 categories: [blog,project]
+image: assets/images/2025-01-24-thesis-generator/thesis-generator.png
+image_alt: "thesis-generator"
 ---
+
+![](/assets/images/2025-01-24-thesis-generator/thesis-generator.png)
 
 This project provides a tool designed to automatically analyze source code files and generate a structured thesis document. It uses Large Language Models (LLMs) through API integration to accomplish this. The system is intended to assist in creating a first draft of a thesis.
 
