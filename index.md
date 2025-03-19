@@ -2,27 +2,43 @@
 layout: default
 ---
 
-<div class="tweets-container">  
-  {% for tweet in site.tweets reversed limit:10 %}
-  <div class="tweet-item">
-    <div class="tweet-date">{{ tweet.date | date: "%b %-d, %Y" }}</div>
-    <div class="tweet-content">{{ tweet.content }}</div>
-    {% if tweet.image %}
-      <div class="tweet-media">
-        <img src="{{ tweet.image }}" alt="{{ tweet.image_alt }}">
-      </div>
+{% assign all_posts = '' | split: '' %}
+{% for post in site.posts %}
+  {% unless post.categories contains 'class_materials' %}
+    {% assign all_posts = all_posts | push: post %}
+  {% endunless %}
+{% endfor %}
+
+{% assign all_items = all_posts | concat: site.tweets | sort: 'date' | reverse %}
+
+<ul class="post-list">
+  {% for item in all_items limit:10 %}
+    {% if item.url contains "/tweets/" %}
+      <!-- Tweet item -->
+      <li class="tweet-item">
+        <div class="tweet-date">{{ item.date | date: "%b %-d, %Y" }}</div>
+        <div class="tweet-content">{{ item.content }}</div>
+        {% if item.image %}
+          <div class="tweet-media">
+            <img src="{{ item.image }}" alt="{{ item.image_alt }}">
+          </div>
+        {% endif %}
+        {% if item.video %}
+          <div class="tweet-media">
+            <video controls src="{{ item.video }}"></video>
+          </div>
+        {% endif %}
+      </li>
+    {% else %}
+      <!-- Post item -->
+      <li class="tweet-item">
+        <div class="tweet-date">{{ item.date | date: "%b %-d, %Y" }}</div>
+        <h3>
+          <a class="post-link" href="{{ item.url | relative_url }}">
+            {{ item.title | escape }}
+          </a>
+        </h3>
+      </li>
     {% endif %}
-    {% if tweet.video %}
-      <div class="tweet-media">
-        <video controls src="{{ tweet.video }}"></video>
-      </div>
-    {% endif %}
-  </div>
   {% endfor %}
-  
-  {% if site.tweets.size > 10 %}
-    <div class="tweets-archive-link">
-      <a href="/tweets/">View all tweets</a>
-    </div>
-  {% endif %}
-</div>
+</ul>
