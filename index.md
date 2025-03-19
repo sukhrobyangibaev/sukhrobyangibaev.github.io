@@ -38,6 +38,14 @@ layout: default
             {{ item.title | escape }}
           </a>
         </h3>
+        {% if item.description %}
+          <div class="tweet-content">{{ item.description }}</div>
+        {% endif %}
+        {% if item.image %}
+          <div class="tweet-media">
+            <img src="{{ item.image }}" alt="{{ item.image_alt }}">
+          </div>
+        {% endif %}
       </li>
     {% endif %}
   {% endfor %}

@@ -3,21 +3,21 @@
 
 @import "{{ site.theme }}";
 
-/* Tweet styling */
 .tweets-container {
-  // max-width: 600px;
   margin: 0 auto;
 }
 
 .tweet-item, .tweet {
   border-bottom: 1px solid #eee;
-  padding: 20px 0;
+  padding: 15px 0;  
+  margin-bottom: 0; 
 }
 
 .tweet-date {
   color: #666;
   font-size: 0.8em;
   margin-bottom: 10px;
+  margin-top: 0;  
 }
 
 .tweet-content {
@@ -28,4 +28,19 @@
 .tweet-media video {
   max-width: 100%;
   border-radius: 10px;
+}
+
+.post-list {
+  margin-left: 0;  
+  padding-left: 0; 
+  list-style: none; 
+}
+
+.post-list li {
+  margin-bottom: 0; 
+}
+
+.post-list h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
