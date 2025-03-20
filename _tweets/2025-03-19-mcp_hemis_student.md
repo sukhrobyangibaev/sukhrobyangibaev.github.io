@@ -6,4 +6,4 @@ image: /assets/images/tweets/2025-03-19/mcp_hemis_student.png
 image_alt: "mcp_hemis_student"
 ---
 
-Introducing MCP HEMIS Student: Access your uni info (grades, schedule, attendance) via Claude. Check it out: [https://github.com/sukhrobyangibaev/mcp_hemis_student.git](https://github.com/sukhrobyangibaev/mcp_hemis_student.git)
+Introducing MCP HEMIS Student: Access your uni info (grades, schedule, attendance) via Claude. Check it out: [github repo](https://github.com/sukhrobyangibaev/mcp_hemis_student.git)
