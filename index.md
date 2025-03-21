@@ -18,6 +18,11 @@ layout: default
       <li class="tweet-item">
         <div class="tweet-date">{{ item.date | date: "%b %-d, %Y" }}</div>
         <div class="tweet-content">{{ item.content }}</div>
+        {% if item.audio %}
+          <div class="tweet-media">
+            <audio controls src="{{ item.audio }}"></audio>
+          </div>
+        {% endif %}
         {% if item.image %}
           <div class="tweet-media">
             <img src="{{ item.image }}" alt="{{ item.image_alt }}">
