@@ -4,9 +4,7 @@ layout: default
 
 {% assign all_posts = '' | split: '' %}
 {% for post in site.posts %}
-  {% unless post.categories contains 'class_materials' %}
-    {% assign all_posts = all_posts | push: post %}
-  {% endunless %}
+  {% assign all_posts = all_posts | push: post %}
 {% endfor %}
 
 {% assign all_items = all_posts | concat: site.tweets | sort: 'date' | reverse %}
