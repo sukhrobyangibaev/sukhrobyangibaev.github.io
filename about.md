@@ -15,3 +15,6 @@ I regularly use:
 Some blogs I recommend checking out:
 - [George Hotz's Blog](https://geohot.github.io/blog/)
 - [Paul Graham's Essays](https://www.paulgraham.com/articles.html)
+
+Podcasts I enjoy:
+- [Joe Rogan Experience #1309 - Naval Ravikant](https://youtu.be/3qHkcs3kG44?si=rdRJvQAfLgcXmAhz)
