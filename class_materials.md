@@ -85,39 +85,54 @@ permalink: /class_materials/
           <div class="subcategory">
             <div class="subcategory-header" onclick="toggleSection('en-lectures')">Lectures</div>
             <div id="en-lectures" class="collapsed">
+              {% assign has_posts = false %}
               {% for post in site.categories.class_materials reversed %}
                 {% if post.categories contains 'databases_en' and post.categories contains 'lecture' %}
                   <div class="post-item">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </div>
+                  {% assign has_posts = true %}
                 {% endif %}
               {% endfor %}
+              {% if has_posts == false %}
+                <div class="post-item">empty</div>
+              {% endif %}
             </div>
           </div>
           
           <div class="subcategory">
             <div class="subcategory-header" onclick="toggleSection('en-practice')">Practice</div>
             <div id="en-practice" class="collapsed">
+              {% assign has_posts = false %}
               {% for post in site.categories.class_materials reversed %}
                 {% if post.categories contains 'databases_en' and post.categories contains 'practice' %}
                   <div class="post-item">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </div>
+                  {% assign has_posts = true %}
                 {% endif %}
               {% endfor %}
+              {% if has_posts == false %}
+                <div class="post-item">empty</div>
+              {% endif %}
             </div>
           </div>
           
           <div class="subcategory">
             <div class="subcategory-header" onclick="toggleSection('en-assignments')">Assignments</div>
             <div id="en-assignments" class="collapsed">
+              {% assign has_posts = false %}
               {% for post in site.categories.class_materials reversed %}
                 {% if post.categories contains 'databases_en' and post.categories contains 'assignment' %}
                   <div class="post-item">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </div>
+                  {% assign has_posts = true %}
                 {% endif %}
               {% endfor %}
+              {% if has_posts == false %}
+                <div class="post-item">empty</div>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -132,39 +147,54 @@ permalink: /class_materials/
           <div class="subcategory">
             <div class="subcategory-header" onclick="toggleSection('ru-lectures')">Lectures</div>
             <div id="ru-lectures" class="collapsed">
+              {% assign has_posts = false %}
               {% for post in site.categories.class_materials reversed %}
                 {% if post.categories contains 'databases_ru' and post.categories contains 'lecture' %}
                   <div class="post-item">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </div>
+                  {% assign has_posts = true %}
                 {% endif %}
               {% endfor %}
+              {% if has_posts == false %}
+                <div class="post-item">empty</div>
+              {% endif %}
             </div>
           </div>
           
           <div class="subcategory">
             <div class="subcategory-header" onclick="toggleSection('ru-practice')">Practice</div>
             <div id="ru-practice" class="collapsed">
+              {% assign has_posts = false %}
               {% for post in site.categories.class_materials reversed %}
                 {% if post.categories contains 'databases_ru' and post.categories contains 'practice' %}
                   <div class="post-item">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </div>
+                  {% assign has_posts = true %}
                 {% endif %}
               {% endfor %}
+              {% if has_posts == false %}
+                <div class="post-item">empty</div>
+              {% endif %}
             </div>
           </div>
           
           <div class="subcategory">
             <div class="subcategory-header" onclick="toggleSection('ru-assignments')">Assignments</div>
             <div id="ru-assignments" class="collapsed">
+              {% assign has_posts = false %}
               {% for post in site.categories.class_materials reversed %}
                 {% if post.categories contains 'databases_ru' and post.categories contains 'assignment' %}
                   <div class="post-item">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </div>
+                  {% assign has_posts = true %}
                 {% endif %}
               {% endfor %}
+              {% if has_posts == false %}
+                <div class="post-item">empty</div>
+              {% endif %}
             </div>
           </div>
         </div>
