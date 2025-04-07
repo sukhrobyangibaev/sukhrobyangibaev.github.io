@@ -30,6 +30,10 @@ permalink: /class_materials/
   font-size: 1.2em;
   margin-bottom: 10px;
   color: #333;
+  cursor: pointer;
+  padding: 5px;
+  background-color: #f8f8f8;
+  border-radius: 3px;
 }
 
 .post-item {
@@ -65,36 +69,42 @@ permalink: /class_materials/
         </div>
         <div id="en-content" class="collapsed">
           <div class="subcategory">
-            <div class="subcategory-header">Lectures</div>
-            {% for post in site.categories.class_materials reversed %}
-              {% if post.categories contains 'databases_en' and post.categories contains 'lecture' %}
-                <div class="post-item">
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </div>
-              {% endif %}
-            {% endfor %}
+            <div class="subcategory-header" onclick="toggleSection('en-lectures')">Lectures</div>
+            <div id="en-lectures" class="collapsed">
+              {% for post in site.categories.class_materials reversed %}
+                {% if post.categories contains 'databases_en' and post.categories contains 'lecture' %}
+                  <div class="post-item">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
           
           <div class="subcategory">
-            <div class="subcategory-header">Practice</div>
-            {% for post in site.categories.class_materials reversed %}
-              {% if post.categories contains 'databases_en' and post.categories contains 'practice' %}
-                <div class="post-item">
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </div>
-              {% endif %}
-            {% endfor %}
+            <div class="subcategory-header" onclick="toggleSection('en-practice')">Practice</div>
+            <div id="en-practice" class="collapsed">
+              {% for post in site.categories.class_materials reversed %}
+                {% if post.categories contains 'databases_en' and post.categories contains 'practice' %}
+                  <div class="post-item">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
           
           <div class="subcategory">
-            <div class="subcategory-header">Assignments</div>
-            {% for post in site.categories.class_materials reversed %}
-              {% if post.categories contains 'databases_en' and post.categories contains 'assignment' %}
-                <div class="post-item">
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </div>
-              {% endif %}
-            {% endfor %}
+            <div class="subcategory-header" onclick="toggleSection('en-assignments')">Assignments</div>
+            <div id="en-assignments" class="collapsed">
+              {% for post in site.categories.class_materials reversed %}
+                {% if post.categories contains 'databases_en' and post.categories contains 'assignment' %}
+                  <div class="post-item">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
@@ -106,36 +116,42 @@ permalink: /class_materials/
         </div>
         <div id="ru-content" class="collapsed">
           <div class="subcategory">
-            <div class="subcategory-header">Lectures</div>
-            {% for post in site.categories.class_materials reversed %}
-              {% if post.categories contains 'databases_ru' and post.categories contains 'lecture' %}
-                <div class="post-item">
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </div>
-              {% endif %}
-            {% endfor %}
+            <div class="subcategory-header" onclick="toggleSection('ru-lectures')">Lectures</div>
+            <div id="ru-lectures" class="collapsed">
+              {% for post in site.categories.class_materials reversed %}
+                {% if post.categories contains 'databases_ru' and post.categories contains 'lecture' %}
+                  <div class="post-item">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
           
           <div class="subcategory">
-            <div class="subcategory-header">Practice</div>
-            {% for post in site.categories.class_materials reversed %}
-              {% if post.categories contains 'databases_ru' and post.categories contains 'practice' %}
-                <div class="post-item">
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </div>
-              {% endif %}
-            {% endfor %}
+            <div class="subcategory-header" onclick="toggleSection('ru-practice')">Practice</div>
+            <div id="ru-practice" class="collapsed">
+              {% for post in site.categories.class_materials reversed %}
+                {% if post.categories contains 'databases_ru' and post.categories contains 'practice' %}
+                  <div class="post-item">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
           
           <div class="subcategory">
-            <div class="subcategory-header">Assignments</div>
-            {% for post in site.categories.class_materials reversed %}
-              {% if post.categories contains 'databases_ru' and post.categories contains 'assignment' %}
-                <div class="post-item">
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </div>
-              {% endif %}
-            {% endfor %}
+            <div class="subcategory-header" onclick="toggleSection('ru-assignments')">Assignments</div>
+            <div id="ru-assignments" class="collapsed">
+              {% for post in site.categories.class_materials reversed %}
+                {% if post.categories contains 'databases_ru' and post.categories contains 'assignment' %}
+                  <div class="post-item">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
