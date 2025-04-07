@@ -57,7 +57,7 @@ permalink: /class_materials/
     <div class="category-header" onclick="toggleSection('en-content')">
       <h2>Databases EN</h2>
     </div>
-    <div id="en-content">
+    <div id="en-content" class="collapsed">
       <div class="subcategory">
         <div class="subcategory-header">Lectures</div>
         {% for post in site.categories.class_materials reversed %}
@@ -98,7 +98,7 @@ permalink: /class_materials/
     <div class="category-header" onclick="toggleSection('ru-content')">
       <h2>Databases RU</h2>
     </div>
-    <div id="ru-content">
+    <div id="ru-content" class="collapsed">
       <div class="subcategory">
         <div class="subcategory-header">Lectures</div>
         {% for post in site.categories.class_materials reversed %}
@@ -142,12 +142,4 @@ function toggleSection(sectionId) {
   const content = document.getElementById(sectionId);
   content.classList.toggle('collapsed');
 }
-
-// Initialize all sections as collapsed
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = ['en-content', 'ru-content'];
-  sections.forEach(section => {
-    document.getElementById(section).classList.add('collapsed');
-  });
-});
 </script>
