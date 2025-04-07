@@ -21,8 +21,22 @@ permalink: /class_materials/
   font-size: 1.5em;
 }
 
-.subcategory {
+.language-header {
+  cursor: pointer;
+  padding: 8px;
+  background-color: #e6e6e6;
+  border-radius: 4px;
+  margin-bottom: 8px;
   margin-left: 20px;
+}
+
+.language-header h3 {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+.subcategory {
+  margin-left: 40px;
   margin-bottom: 15px;
 }
 
@@ -37,7 +51,7 @@ permalink: /class_materials/
 }
 
 .post-item {
-  margin-left: 40px;
+  margin-left: 60px;
   margin-bottom: 8px;
 }
 
@@ -64,8 +78,8 @@ permalink: /class_materials/
     <div id="databases-content" class="collapsed">
       <!-- English Section -->
       <div class="category-section">
-        <div class="category-header" onclick="toggleSection('en-content')">
-          <h2>EN</h2>
+        <div class="language-header" onclick="toggleSection('en-content')">
+          <h3>EN</h3>
         </div>
         <div id="en-content" class="collapsed">
           <div class="subcategory">
@@ -111,8 +125,8 @@ permalink: /class_materials/
 
       <!-- Russian Section -->
       <div class="category-section">
-        <div class="category-header" onclick="toggleSection('ru-content')">
-          <h2>RU</h2>
+        <div class="language-header" onclick="toggleSection('ru-content')">
+          <h3>RU</h3>
         </div>
         <div id="ru-content" class="collapsed">
           <div class="subcategory">
