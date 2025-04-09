@@ -13,6 +13,12 @@
   <meta name="theme-color" content="#2A244C">
 
   {%- seo -%}
+  
+  {% if page.image %}
+    <meta property="og:image" content="{{ page.image | absolute_url }}" />
+  {% else %}
+    <meta property="og:image" content="{{ '/assets/favicons/android-chrome-512x512.png' | absolute_url }}" />
+  {% endif %}
     
   <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
   {%- feed_meta -%}
