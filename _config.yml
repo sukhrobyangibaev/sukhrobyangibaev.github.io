@@ -20,8 +20,7 @@
 
 title: Sukhrob Yangibaev
 email: sukhrobyangibaev@gmail.com
-# description: >- # this means to ignore newlines until "domain:"
-#   TBD
+description: Personal website of Sukhrob Yangibaev
 domain: yangibaev.com       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yangibaev.com" # the base hostname & protocol for your site, e.g. http://example.com
