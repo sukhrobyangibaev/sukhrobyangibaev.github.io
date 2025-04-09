@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Learning and sharing
-image: assets/favicons/banner.png
 ---
 
 {% assign all_posts = '' | split: '' %}
