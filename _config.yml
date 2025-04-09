@@ -22,9 +22,9 @@ title: Sukhrob Yangibaev
 email: sukhrobyangibaev@gmail.com
 # description: >- # this means to ignore newlines until "domain:"
 #   TBD
-domain: sukhrobyangibaev.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+domain: yangibaev.com       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sukhrobyangibaev.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://yangibaev.com" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: sufurobu
 github_username:  sukhrobyangibaev
 google_analytics: G-022QS61YFZ
