@@ -1,5 +1,6 @@
 ---
 layout: default
+description: learning and sharing
 image: assets/favicons/banner.png
 ---
 
