@@ -33,6 +33,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate-v2
 
 # Categories settings
 permalink: /:categories/:title/
@@ -61,6 +62,23 @@ header_pages:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Pagination Configuration
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: ''
+  tag: ''
+  locale: ''
+  trail:
+    before: 2
+    after: 2
+  collection: 'all'
 
 collections:
   tweets:
