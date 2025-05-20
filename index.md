@@ -5,7 +5,7 @@ pagination:
 ---
 
 <ul class="post-list">
-  {% for item in paginator.docs %}
+  {% for item in paginator.posts %}
     {% if item.categories contains 'class_materials' %}{% continue %}{% endif %}
     {% if item.url contains "/tweets/" %}
       <!-- Tweet item -->
