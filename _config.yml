@@ -65,5 +65,4 @@ header_pages:
 
 collections:
   tweets:
-    output: true
-    permalink: /tweets/:slug/
+    output: false
