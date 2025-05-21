@@ -39,7 +39,8 @@ permalink: /:categories/:title/
 
 # Navigation
 header_pages:
-  - class_materials.md
+  - tweets.md
+  # - class_materials.md
   - about.md
 
 # Exclude from processing.

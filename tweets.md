@@ -1,6 +1,6 @@
 ---
 layout: page
-title: All Tweets
+title: Archive
 permalink: /tweets/
 ---
 
