@@ -1,6 +1,5 @@
 ---
 layout: tweet
-title: early
 date: 2025-05-21 00:00:02 +0000
 ---
 
