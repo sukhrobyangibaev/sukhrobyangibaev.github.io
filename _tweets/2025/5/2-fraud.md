@@ -5,4 +5,4 @@ image: /assets/images/tweets/fraud.jpg
 image_alt: "fraud"
 ---
 
-I am fraud.
+I am a fraud.
